@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fernando Bermudo | Java, Kotlin & Python Developer</title>
+  <title>Fernando Bermudo | Java & Kotlin Backend Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Fernando Bermudo, Software Developer specialising in Java, Kotlin, Python, Spring Boot, Android and full-stack applications, with foundations in data analysis and machine learning." />
+  <meta name="description" content="Portfolio of Fernando Bermudo, backend-focused software developer specialising in Java, Kotlin, Spring Boot, REST APIs, Android, and Python-based AI integrations." />
   <style>
     :root {
       --bg: #050816;
@@ -99,8 +99,6 @@
       gap: 40px;
     }
 
-    /* HERO */
-
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1.3fr);
@@ -140,6 +138,7 @@
       font-size: 13px;
       color: var(--text);
       max-width: 640px;
+      line-height: 1.65;
     }
 
     .hero-tags {
@@ -223,8 +222,6 @@
       line-height: 1.4;
     }
 
-    /* Sections */
-
     section {
       display: flex;
       flex-direction: column;
@@ -263,7 +260,7 @@
       font-size: 12px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .card small {
@@ -272,7 +269,13 @@
     }
 
     .card strong {
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.6;
       color: var(--text);
     }
 
@@ -300,6 +303,7 @@
     .contact {
       font-size: 13px;
       color: var(--muted);
+      line-height: 1.7;
     }
 
     footer {
@@ -345,46 +349,40 @@
     <div>
       <div class="hero-title">
         Hi, I'm Fernando Bermudo<span>.</span><br />
-        <span>Java & Kotlin Developer | Backend, Android & Full-Stack | Python & ML Foundations</span>
+        <span>Java & Kotlin Backend Developer | Spring Boot, Android & AI Integrations</span>
       </div>
       <div class="hero-subtitle">
-        Software developer based in Dublin, specialising in Java, Kotlin, Android, and full-stack applications, while also building strong foundations in Python, data analysis, and machine learning.
+        Backend-focused software developer based in Dublin, building scalable Java and Kotlin applications with Spring Boot, REST APIs, databases, and modern development practices.
       </div>
       <div class="hero-highlight" id="typing"></div>
       <p class="hero-text">
-        I build REST APIs, backend services, Android apps, and full-stack applications using
-        Java, Kotlin, Spring Boot, React, and databases like MongoDB and SQL. With a strong
-        focus on clarity, maintainability, and performance, I enjoy designing systems that are
-        both robust and easy to understand, from backend logic to user-facing features. In parallel, I am developing strong foundations in Python-based data analysis and machine learning through academic coursework and practical exercises.
+        I design and build backend services, REST APIs, and full-stack applications using Java, Kotlin, Spring Boot, MongoDB, and SQL, with a strong focus on clarity, testing, maintainability, and performance. Alongside my backend work, I also build Android applications in Kotlin and Python-based services with FastAPI, including AI-oriented integrations such as RAG workflows and LLM-based solutions.
       </p>
       <div class="hero-tags">
         <span class="tag">Java & Kotlin</span>
         <span class="tag">Spring Boot & REST APIs</span>
-        <span class="tag">Android Development</span>
-        <span class="tag">React & Web Apps</span>
-        <span class="tag">MongoDB & SQL</span>
-        <span class="tag">Backend & Full-Stack</span>
-        <span class="tag">Python & ML Foundations</span>
-        <span class="tag">Data Analysis (Pandas)</span>
+        <span class="tag">SQL · MongoDB · JUnit</span>
+        <span class="tag">Android · MVVM · Coroutines</span>
+        <span class="tag">Python · FastAPI · RAG</span>
+        <span class="tag">Cloud-Oriented Development</span>
       </div>
     </div>
 
     <aside class="hero-card">
       <div class="hero-label">Links & Profiles</div>
       <div class="links-row">
-        <a class="pill-link" href="https://github.com/Granades" target="_blank">
+        <a class="pill-link" href="https://github.com/Granades" target="_blank" rel="noopener noreferrer">
           <span class="icon">★</span><span>GitHub</span>
         </a>
-        <a class="pill-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank">
+        <a class="pill-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank" rel="noopener noreferrer">
           <span class="icon">💼</span><span>LinkedIn</span>
         </a>
       </div>
 
       <div class="avatar">
-        <img class="avatar-img" src="profile.png" alt="FB Logo" />
+        <img class="avatar-img" src="profile.png" alt="Fernando Bermudo profile" />
         <div class="avatar-text">
-          Java & Kotlin developer focused on clear architecture, maintainable code, and
-          pragmatic solutions across backend, Android, full-stack projects, and Python-based data and ML foundations.
+          Backend-focused developer working with Java, Kotlin, Spring Boot, APIs, databases, and modern integrations across Android and AI-powered tooling.
         </div>
       </div>
 
@@ -393,145 +391,122 @@
         <div>📍 Dublin, Ireland</div>
         <div>📧 <a href="mailto:contact@granades.dev">contact@granades.dev</a></div>
       </div>
+
       <a class="pill-link" href="mailto:contact@granades.dev">
-  <span class="icon">✉️</span><span>Email Me</span>
+        <span class="icon">✉️</span><span>Email Me</span>
       </a>
     </aside>
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section>
+    <h2>Core Skills <span class="label">Backend focus</span></h2>
+    <div class="skills-list">
+      <span>Java · Kotlin</span>
+      <span>Spring Boot · REST APIs</span>
+      <span>SQL · MongoDB</span>
+      <span>Backend Architecture</span>
+      <span>JUnit · Testing</span>
+      <span>Cloud-Oriented Development · Azurite</span>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL SKILLS -->
+  <section>
+    <h2>Additional Skills <span class="label">Extended experience</span></h2>
+    <div class="skills-list">
+      <span>Android · Kotlin · MVVM</span>
+      <span>Python · FastAPI · RAG · LLM Integration</span>
+      <span>React (Vite + Axios)</span>
+      <span>Git · Agile · Debugging</span>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section>
     <h2>About Me <span class="label">Profile</span></h2>
     <p class="hero-text">
-      I’m a software developer with a strong foundation in Java, Kotlin, Spring Boot, Android
-      development, and full-stack engineering. Alongside this, I am building solid foundations in
-      Python-based data analysis and machine learning as part of my Computer Science studies. I’m currently advancing my technical expertise
-      through a Master’s in Computer Science at Griffith College Dublin, where I work with real
-      projects that combine backend services, APIs, databases, and user interfaces.
+      I’m a backend-focused software engineer specialising in Java and Kotlin, currently completing a Master’s in Computer Science at Griffith College Dublin. I design and build scalable REST APIs and backend services using Spring Boot, MongoDB, and SQL, with a strong focus on clean architecture, testing, scalability, and maintainability.
       <br /><br />
-      Before moving fully into software development, I worked in IT support, gaining experience
-      with system administration, networking, and troubleshooting. That background now helps me
-      debug more effectively, understand infrastructure constraints, and build more resilient
-      applications. My earlier studies in History and Museum research also strengthened my
-      documentation skills, attention to detail, and analytical thinking.
+      In addition to backend development, I have experience building Android applications with Kotlin using modern frameworks such as Jetpack, MVVM, and coroutines. I also develop Python-based solutions using FastAPI, including integrations with machine learning models and retrieval-augmented generation (RAG) systems.
+      <br /><br />
+      My background in IT support, system configuration, networking, and troubleshooting helps me design reliable systems and approach debugging in a structured, practical way.
     </p>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- FEATURED PROJECTS -->
   <section id="projects">
-    <h2>Selected Projects <span class="label">Hands-on work</span></h2>
+    <h2>Featured Projects <span class="label">Backend & systems</span></h2>
     <div class="grid">
 
       <div class="card">
-        <strong>Ragnarok MVP - Discord Tracker Bot</strong>
-        <small>Python · Discord API · MongoDB · Automation</small>
+        <strong>Pizzaiolo – Full-Stack Ordering System</strong>
+        <small>⭐ Featured · Java · Spring Boot · React · MongoDB</small>
         <p>
-          Real-time event tracking and notification system that records MVP boss kills,
-          calculates respawn timers, locations and notifies users via Discord. Implements a
-          color-based status system and persistent tracking to improve group coordination.
+          Full-stack ordering platform with REST APIs, authentication, and database integration. Designed with layered backend architecture to simulate real restaurant workflows and user-facing ordering flows.
         </p>
-      
-        <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank">
-          View on GitHub →
+        <a href="https://github.com/Granades/pizzaiolo-project" target="_blank" rel="noopener noreferrer">
+          View project →
+        </a>
+      </div>
+
+      <div class="card">
+        <strong>Ragnarok MVP Tracker – Real-Time System</strong>
+        <small>⭐ Featured · Python · Discord API · MongoDB · Automation</small>
+        <p>
+          Real-time event tracking and notification system that records boss kills, calculates respawn timers, tracks tomb locations, and sends Discord alerts to improve group coordination through persistent state management.
+        </p>
+        <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank" rel="noopener noreferrer">
+          View project →
         </a>
       </div>
 
       <div class="card">
         <strong>Housing Inequality in Ireland – ML Analysis</strong>
-        <small>Python · Pandas · Scikit-learn · K-Means</small>
+        <small>⭐ Featured · Python · Scikit-learn · K-Means</small>
         <p>
-          Machine learning project analysing housing pressure and socio-economic inequality
-          across Ireland using Census 2022 data (~19,000 areas). Applies K-Means clustering
-          to uncover hidden territorial patterns beyond traditional classifications.
+          Machine learning project analysing housing pressure and socio-economic inequality across Ireland using Census 2022 data. Applies clustering to reveal territorial patterns beyond traditional urban–rural classifications.
         </p>
-        <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank">
-          View on GitHub →
+        <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank" rel="noopener noreferrer">
+          View project →
         </a>
       </div>
 
-      <div class="card">
-        <strong>Pizzaiolo – Full-Stack Pizza Ordering App</strong>
-        <small>Java · Spring Boot · React (Vite + Axios) · MongoDB · REST APIs</small>
-        <p>
-          QR-based ordering system where customers can view the menu, manage their basket,
-          and place orders. Includes an admin area for dish and order management, simulating
-          real-world restaurant workflows with a layered backend architecture.
-        </p>
-        <a href="https://github.com/Granades/pizzaiolo-project" target="_blank">
-          View code on GitHub →
-        </a>
-      </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <strong>Skills Development – Backend & Algorithms</strong>
-        <small>Java · SQL · Problem Solving</small>
-        <p>
-          Continuous practice with algorithms, data structures, database queries, and backend
-          logic to strengthen core engineering fundamentals, performance reasoning, and
-          structured problem solving.
-        </p>
-      </div>
-
-      <div class="card">
-        <strong>Vending Machine – JavaFX</strong>
-        <small>JavaFX · OOP · UI</small>
-        <p>
-          Desktop application simulating a vending machine with clean object-oriented design,
-          clear UI, and focus on reusability, modularity, and error handling.
-        </p>
-        <a href="https://github.com/Granades/Vending-Machine-JavaFX" target="_blank">
-          View code on GitHub →
-        </a>
-      </div>
-
-      <div class="card">
-        <strong>Grade Calculator – JavaFX</strong>
-        <small>JavaFX · Validation</small>
-        <p>
-          Interactive GUI app that lets users enter grades and weights dynamically, then
-          calculates weighted averages in real time. Built with input validation and reusable
-          components to mirror real academic workflows.
-        </p>
-        <a href="https://github.com/Granades/Calculator-JavaFX" target="_blank">
-          View code on GitHub →
-        </a>
-      </div>
+  <!-- OTHER PROJECTS -->
+  <section>
+    <h2>Other Projects <span class="label">Additional work</span></h2>
+    <div class="grid">
 
       <div class="card">
         <strong>SEWA – Software Engineering Project</strong>
         <small>Java · SDLC · Agile Practices</small>
         <p>
-          Academic software engineering project covering requirements, UML design,
-          implementation, testing, and documentation, following structured SDLC and Agile
-          practices.
+          Academic software engineering project covering requirements, UML design, implementation, testing, and documentation following structured SDLC and Agile practices.
         </p>
-        <a href="https://github.com/Granades/SEWA" target="_blank">
-          View code on GitHub →
+        <a href="https://github.com/Granades/SEWA" target="_blank" rel="noopener noreferrer">
+          View →
         </a>
       </div>
 
       <div class="card">
-        <strong>AR Museum Experience</strong>
-        <small>Android · AR Concept · UX</small>
+        <strong>Android Applications</strong>
+        <small>Kotlin · Android · MVVM · API Integration</small>
         <p>
-          Augmented reality concept designed for an educational museum environment to improve
-          visitor engagement and storytelling through interactive digital content and mobile
-          experiences.
+          Small Android projects demonstrating Kotlin development, Android architecture fundamentals, UI design, state handling, and API-driven mobile interactions.
         </p>
-        <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank">
-          View project details →
-        </a>
       </div>
 
       <div class="card">
-        <strong>Migration Database – Historical Data</strong>
+        <strong>SQL Migration Database</strong>
         <small>SQL · Data Modelling</small>
         <p>
-          Normalised database for analysing historical migration data between Spain and
-          South America, focusing on data integrity, schema design, and query efficiency.
+          Normalised database project analysing historical migration data, focused on schema design, data integrity, and query efficiency.
         </p>
-        <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank">
-          View schema & notes →
+        <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank" rel="noopener noreferrer">
+          View →
         </a>
       </div>
 
@@ -545,20 +520,20 @@
       <div class="card">
         <strong>Engineering Foundation</strong>
         <ul>
-          <li>Building Java and Kotlin backends, REST APIs, and Android applications.</li>
-          <li>Working with Spring Boot, React, MongoDB, and SQL in full-stack projects.</li>
-          <li>Designing and debugging database-driven and distributed applications.</li>
-          <li>Developing foundations in Python-based data analysis and machine learning through academic coursework.</li>
+          <li>Building Java and Kotlin backend services, REST APIs, and database-driven applications.</li>
+          <li>Working with Spring Boot, React, MongoDB, SQL, and testing practices such as JUnit.</li>
+          <li>Developing Android applications with Kotlin, MVVM, coroutines, and API integration.</li>
+          <li>Building Python + FastAPI services and AI-oriented workflows including RAG-based integrations.</li>
           <li>Comfortable with Git, Agile workflows, and collaborative development.</li>
         </ul>
       </div>
       <div class="card">
         <strong>Professional Mindset</strong>
         <ul>
-          <li>Calm under pressure and methodical when troubleshooting.</li>
+          <li>Methodical and calm when debugging and improving systems.</li>
           <li>Clear communication with both technical and non-technical stakeholders.</li>
-          <li>Proactive learner with strong ownership and attention to detail.</li>
-          <li>Motivated to grow in software engineering roles across backend, Android, and full-stack development.</li>
+          <li>Strong ownership, analytical thinking, and attention to detail.</li>
+          <li>Motivated to grow in backend and distributed systems roles while expanding Android and AI integration experience.</li>
         </ul>
       </div>
     </div>
@@ -566,22 +541,23 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills <span class="label">Tech stack</span></h2>
+    <h2>Tech Stack <span class="label">Selected technologies</span></h2>
     <div class="skills-list">
       <span>Java · Kotlin</span>
-      <span>Spring Boot · REST APIs</span>
-      <span>Android Development · Jetpack · MVVM</span>
-      <span>JavaScript · React (Vite + Axios)</span>
-      <span>MongoDB Atlas · MySQL · SQL</span>
-      <span>JavaFX · Desktop applications</span>
-      <span>OOP · MVC · Software Architecture</span>
-      <span>Python</span>
-      <span>Data Analysis · Pandas · NumPy</span>
-      <span>Machine Learning Foundations</span>
-      <span>Supervised Learning (introductory)</span>
+      <span>Spring Boot</span>
+      <span>REST APIs</span>
+      <span>JUnit</span>
+      <span>SQL · MySQL</span>
+      <span>MongoDB</span>
+      <span>Android · Jetpack · MVVM</span>
+      <span>Coroutines</span>
+      <span>Python · FastAPI</span>
+      <span>RAG · LLM Integration</span>
+      <span>React</span>
       <span>Git & GitHub</span>
-      <span>Testing · Agile/Scrum</span>
-      <span>Documentation & Technical Writing</span>
+      <span>Cloud-Oriented Development</span>
+      <span>Azurite</span>
+      <span>Debugging · Performance Optimisation</span>
       <span>Windows & Linux fundamentals</span>
       <span>Basic networking concepts</span>
     </div>
@@ -590,17 +566,15 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact <span class="label">Let’s talk</span></h2>
-      <p class="contact">
-    I am open to opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Android Developer</strong>
-    or <strong>Full-Stack Developer</strong> in Ireland and across the EU.<br />
-    For job opportunities, collaborations, or technical discussions, feel free to reach me at
-    <a href="mailto:contact@granades.dev">contact@granades.dev</a>
-    or via my GitHub profile.
-  </p>
-  <p class="contact">
-    <strong>Currently open to junior and graduate software engineering opportunities.</strong>
-  </p>
-    <br /><br />
+    <p class="contact">
+      I am open to opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Java Developer</strong>, or <strong>Kotlin Developer</strong> in Ireland and across the EU.<br />
+      For job opportunities, collaborations, or technical discussions, feel free to reach me at
+      <a href="mailto:contact@granades.dev">contact@granades.dev</a>
+      or via my GitHub profile.
+    </p>
+    <p class="contact">
+      <strong>Currently open to junior and graduate software engineering opportunities.</strong>
+    </p>
   </section>
 </main>
 
@@ -609,16 +583,15 @@
 </footer>
 
 <script>
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Soft typing effect for highlight text
   const phrases = [
-    "Building Java & Kotlin backends and Android apps.",
-    "Developing Python & machine learning foundations.",
-    "Focused on clean, well-documented software.",
-    "Combining backend, mobile, and full-stack experience."
+    "Building Java & Kotlin backends with Spring Boot.",
+    "Designing REST APIs, databases, and scalable services.",
+    "Developing Android apps and AI-powered integrations.",
+    "Focused on clean, reliable, and maintainable software."
   ];
+
   let i = 0, j = 0, current = "", isDeleting = false;
   const el = document.getElementById("typing");
 
