@@ -4,22 +4,33 @@
   <meta charset="UTF-8" />
   <title>Fernando Bermudo | Java & Kotlin Backend Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Fernando Bermudo, backend-focused software developer specialising in Java, Kotlin, Spring Boot, REST APIs, Android, and Python-based AI integrations." />
+  <meta
+    name="description"
+    content="Portfolio of Fernando Bermudo, Java and Kotlin backend developer focused on Spring Boot, REST APIs, databases, Android, and Python-based AI integrations."
+  />
   <style>
     :root {
       --bg: #050816;
       --bg-alt: #0f172a;
+      --card: rgba(9, 9, 20, 0.96);
       --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.1);
+      --accent-soft: rgba(56, 189, 248, 0.12);
       --text: #e5e7eb;
       --muted: #9ca3af;
+      --border: rgba(75, 85, 99, 0.55);
       --radius: 18px;
-      --shadow: 0 14px 45px rgba(15,23,42,0.6);
-      --max-width: 1100px;
-      --font: system-ui, -apple-system, BlinkMacSystemFont, -system-ui, sans-serif;
+      --shadow: 0 14px 45px rgba(15, 23, 42, 0.55);
+      --max-width: 1080px;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -41,12 +52,14 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 30;
       backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom,
-        rgba(2,6,23,0.92),
-        rgba(2,6,23,0.6));
-      border-bottom: 1px solid rgba(148,163,253,0.08);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.92),
+        rgba(2, 6, 23, 0.68)
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
     }
 
     .nav {
@@ -60,8 +73,8 @@
     }
 
     .logo {
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       font-size: 15px;
       text-transform: uppercase;
       color: var(--muted);
@@ -73,15 +86,16 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 14px;
       font-size: 14px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
       padding: 6px 10px;
       border-radius: 999px;
-      transition: all 0.18s ease;
       color: var(--muted);
+      transition: 0.18s ease;
     }
 
     .nav-links a:hover {
@@ -93,88 +107,120 @@
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 20px 40px;
+      padding: 34px 20px 48px;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 42px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1.3fr);
-      gap: 28px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.9fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
     }
 
     .hero-title {
-      font-size: 28px;
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 6px;
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 700;
     }
 
-    .hero-title span {
+    .hero-title .accent {
       color: var(--accent);
     }
 
     .hero-subtitle {
-      font-size: 14px;
+      margin: 10px 0 0;
+      font-size: 18px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-summary {
+      margin: 14px 0 0;
+      max-width: 680px;
+      font-size: 15px;
+      line-height: 1.75;
       color: var(--muted);
-      margin-bottom: 10px;
     }
 
     .hero-highlight {
-      font-size: 13px;
+      margin-top: 12px;
+      font-size: 14px;
       color: var(--accent);
-      margin-bottom: 8px;
-      min-height: 18px;
+      min-height: 20px;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 1px solid rgba(148,163,253,0.5);
+      border-right: 1px solid rgba(148, 163, 184, 0.45);
       padding-right: 4px;
     }
 
-    .hero-text {
-      font-size: 13px;
-      color: var(--text);
-      max-width: 640px;
-      line-height: 1.65;
-    }
-
-    .hero-tags {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 16px 0 0;
+      margin-top: 18px;
     }
 
-    .tag {
-      padding: 6px 10px;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
       border-radius: 999px;
-      font-size: 11px;
-      border: 1px solid rgba(148,163,253,0.25);
+      font-size: 12px;
       color: var(--muted);
-      backdrop-filter: blur(10px);
-      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .hero-card,
+    .card,
+    .feature-card,
+    .stack-group {
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
     .hero-card {
       padding: 16px 14px;
-      border-radius: var(--radius);
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent),
-                  rgba(9,9,20,0.98);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(148,163,253,0.24);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 12px;
+      gap: 12px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent),
+        rgba(9, 9, 20, 0.96);
     }
 
-    .hero-label {
-      font-size: 9px;
+    .meta-label {
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--muted);
     }
 
@@ -182,147 +228,193 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.34);
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .action-link:hover {
+      text-decoration: none;
+      background: var(--accent-soft);
+    }
+
+    .profile-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
       margin-top: 2px;
     }
 
-    .pill-link {
-      padding: 6px 9px;
+    .profile-img {
+      width: 56px;
+      height: 56px;
       border-radius: 999px;
-      font-size: 11px;
-      border: 1px solid rgba(56,189,248,0.45);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--accent);
-    }
-
-    .pill-link span.icon {
-      font-size: 12px;
-    }
-
-    .avatar {
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .avatar-img {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      border: 2px solid rgba(56,189,248,0.6);
       object-fit: cover;
+      border: 2px solid rgba(56, 189, 248, 0.5);
       background: #020817;
     }
 
-    .avatar-text {
-      font-size: 10px;
+    .profile-text {
+      font-size: 12px;
+      line-height: 1.5;
       color: var(--muted);
-      line-height: 1.4;
     }
 
-    section {
+    .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      margin: 0;
-    }
-
-    h2 span.label {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      gap: 5px;
+      font-size: 13px;
       color: var(--muted);
     }
 
-    .grid {
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
+    .feature-card,
     .card {
-      padding: 14px 12px;
-      border-radius: var(--radius);
-      background: rgba(9,9,20,0.98);
-      border: 1px solid rgba(75,85,99,0.6);
-      box-shadow: 0 10px 35px rgba(15,23,42,0.5);
-      font-size: 12px;
+      padding: 16px 14px;
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .card small {
-      color: var(--muted);
-      font-size: 10px;
+    .feature-card {
+      border: 1px solid rgba(56, 189, 248, 0.32);
     }
 
-    .card strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .card p {
+    .card-title {
       margin: 0;
-      line-height: 1.6;
-      color: var(--text);
+      font-size: 17px;
+      line-height: 1.35;
     }
 
-    .card ul {
-      padding-left: 16px;
-      margin: 4px 0 0;
+    .card-meta {
+      font-size: 12px;
       color: var(--muted);
     }
 
-    .skills-list {
+    .card-text {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 13px;
+    }
+
+    .card-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--muted);
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 2px;
     }
 
-    .skills-list span {
-      padding: 5px 8px;
-      border-radius: 8px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(75,85,99,0.7);
-    }
-
-    .contact {
+    .card-links a {
       font-size: 13px;
+      font-weight: 600;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .stack-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stack-group {
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stack-title {
+      margin: 0;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .stack-tags span {
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 12px;
       color: var(--muted);
-      line-height: 1.7;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(75, 85, 99, 0.65);
+    }
+
+    .contact-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 780px;
     }
 
     footer {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 20px 24px;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--muted);
       text-align: right;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 960px) {
       .hero {
         grid-template-columns: 1fr;
       }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .hero-title {
+        font-size: 29px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-highlight {
+        white-space: normal;
+        border-right: none;
+      }
+
       footer {
         text-align: left;
       }
@@ -330,297 +422,276 @@
   </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="logo">Fernando <span>Bermudo</span></div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero" id="about">
-    <div>
-      <div class="hero-title">
-        Hi, I'm Fernando Bermudo<span>.</span><br />
-        <span>Java & Kotlin Backend Developer | Spring Boot, Android & AI Integrations</span>
-      </div>
-      <div class="hero-subtitle">
-        Backend-focused software developer based in Dublin, building scalable Java and Kotlin applications with Spring Boot, REST APIs, databases, and modern development practices.
-      </div>
-      <div class="hero-highlight" id="typing"></div>
-      <p class="hero-text">
-        I design and build backend services, REST APIs, and full-stack applications using Java, Kotlin, Spring Boot, MongoDB, and SQL, with a strong focus on clarity, testing, maintainability, and performance. Alongside my backend work, I also build Android applications in Kotlin and Python-based services with FastAPI, including AI-oriented integrations such as RAG workflows and LLM-based solutions.
-      </p>
-      <div class="hero-tags">
-        <span class="tag">Java & Kotlin</span>
-        <span class="tag">Spring Boot & REST APIs</span>
-        <span class="tag">SQL · MongoDB · JUnit</span>
-        <span class="tag">Android · MVVM · Coroutines</span>
-        <span class="tag">Python · FastAPI · RAG</span>
-        <span class="tag">Cloud-Oriented Development</span>
-      </div>
+  <header>
+    <div class="nav">
+      <div class="logo">Fernando <span>Bermudo</span></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <aside class="hero-card">
-      <div class="hero-label">Links & Profiles</div>
-      <div class="links-row">
-        <a class="pill-link" href="https://github.com/Granades" target="_blank" rel="noopener noreferrer">
-          <span class="icon">★</span><span>GitHub</span>
-        </a>
-        <a class="pill-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank" rel="noopener noreferrer">
-          <span class="icon">💼</span><span>LinkedIn</span>
-        </a>
-      </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <h1 class="hero-title">
+          Hi, I'm Fernando Bermudo.<br />
+          <span class="accent">Java & Kotlin Backend Developer</span>
+        </h1>
+        <div class="hero-subtitle">
+          Spring Boot · REST APIs · Databases · Android · Python AI Integrations
+        </div>
+        <div class="hero-highlight" id="typing"></div>
+        <p class="hero-summary">
+          I build backend services and full-stack applications with Java, Kotlin, Spring Boot, MongoDB, and SQL, with a strong focus on clean architecture, maintainability, testing, and reliable system behaviour. I also work on Android projects in Kotlin and Python-based services with FastAPI, including AI-oriented integrations such as RAG workflows and LLM-connected applications.
+        </p>
 
-      <div class="avatar">
-        <img class="avatar-img" src="profile.png" alt="Fernando Bermudo profile" />
-        <div class="avatar-text">
-          Backend-focused developer working with Java, Kotlin, Spring Boot, APIs, databases, and modern integrations across Android and AI-powered tooling.
+        <div class="hero-pills">
+          <span class="pill">Java · Kotlin</span>
+          <span class="pill">Spring Boot · REST APIs</span>
+          <span class="pill">MongoDB · SQL · JUnit</span>
+          <span class="pill">Android · MVVM</span>
+          <span class="pill">Python · FastAPI · RAG</span>
+          <span class="pill">Cloud-Oriented Development · Azurite</span>
         </div>
       </div>
 
-      <div>
-        <div class="hero-label" style="margin-top:8px;">Contact</div>
-        <div>📍 Dublin, Ireland</div>
-        <div>📧 <a href="mailto:contact@granades.dev">contact@granades.dev</a></div>
+      <aside class="hero-card">
+        <div class="meta-label">Links & Profiles</div>
+        <div class="links-row">
+          <a class="action-link" href="https://github.com/Granades" target="_blank" rel="noopener noreferrer">★ GitHub</a>
+          <a class="action-link" href="https://www.linkedin.com/in/f-bermudo/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+        </div>
+
+        <div class="profile-row">
+          <img class="profile-img" src="profile.png" alt="Fernando Bermudo profile" />
+          <div class="profile-text">
+            Backend developer focused on Java, Kotlin, Spring Boot, APIs, databases, and practical software design, with additional experience in Android and Python-based AI integrations.
+          </div>
+        </div>
+
+        <div class="meta-label">Contact</div>
+        <div class="contact-list">
+          <div>📍 Dublin, Ireland</div>
+          <div>📧 <a href="mailto:contact@granades.dev">contact@granades.dev</a></div>
+          <div>🌐 <a href="https://granades.dev" target="_blank" rel="noopener noreferrer">granades.dev</a></div>
+        </div>
+
+        <a class="action-link" href="mailto:contact@granades.dev">✉️ Email Me</a>
+      </aside>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects">
+      <h2>Featured Projects <span class="section-label">Backend & systems</span></h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3 class="card-title">Pizzaiolo – Full-Stack Ordering System</h3>
+          <div class="card-meta">Java · Spring Boot · React · MongoDB · REST APIs</div>
+          <p class="card-text">
+            Full-stack restaurant ordering platform with REST APIs, authentication, and database integration. Designed with layered backend architecture to simulate real-world restaurant workflows and user-facing order flows.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/Granades/pizzaiolo-project" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3 class="card-title">Ragnarok MVP Tracker – Real-Time System</h3>
+          <div class="card-meta">Python · Discord API · MongoDB · Automation</div>
+          <p class="card-text">
+            Real-time tracking and notification system that records boss kills, calculates respawn timers, tracks tomb locations, and sends Discord alerts to improve coordination through persistent state management and time-based logic.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <h3 class="card-title">Housing Inequality in Ireland – ML Analysis</h3>
+          <div class="card-meta">Python · Pandas · Scikit-learn · K-Means</div>
+          <p class="card-text">
+            Machine learning project analysing Census 2022 data across roughly 19,000 areas in Ireland. Uses K-Means clustering to uncover territorial socio-economic patterns beyond traditional urban–rural classifications.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <a class="pill-link" href="mailto:contact@granades.dev">
-        <span class="icon">✉️</span><span>Email Me</span>
-      </a>
-    </aside>
-  </section>
+    <!-- OTHER PROJECTS -->
+    <section>
+      <h2>Other Projects <span class="section-label">Additional work</span></h2>
 
-  <!-- CORE SKILLS -->
-  <section>
-    <h2>Core Skills <span class="label">Backend focus</span></h2>
-    <div class="skills-list">
-      <span>Java · Kotlin</span>
-      <span>Spring Boot · REST APIs</span>
-      <span>SQL · MongoDB</span>
-      <span>Backend Architecture</span>
-      <span>JUnit · Testing</span>
-      <span>Cloud-Oriented Development · Azurite</span>
-    </div>
-  </section>
+      <div class="other-grid">
+        <article class="card">
+          <h3 class="card-title">SEWA – Software Engineering Project</h3>
+          <div class="card-meta">Java · SDLC · Agile Practices</div>
+          <p class="card-text">
+            Academic software engineering project covering requirements, UML design, implementation, testing, and documentation using a structured SDLC approach.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/Granades/SEWA" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </article>
 
-  <!-- ADDITIONAL SKILLS -->
-  <section>
-    <h2>Additional Skills <span class="label">Extended experience</span></h2>
-    <div class="skills-list">
-      <span>Android · Kotlin · MVVM</span>
-      <span>Python · FastAPI · RAG · LLM Integration</span>
-      <span>React (Vite + Axios)</span>
-      <span>Git · Agile · Debugging</span>
-    </div>
-  </section>
+        <article class="card">
+          <h3 class="card-title">Android Applications</h3>
+          <div class="card-meta">Kotlin · Android · MVVM · API Integration</div>
+          <p class="card-text">
+            Small Android projects demonstrating Kotlin development, Android architecture fundamentals, UI handling, state management, and API-driven mobile interactions.
+          </p>
+          <div class="card-links">
+            <a href="#" aria-disabled="true">Project links coming soon</a>
+          </div>
+        </article>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me <span class="label">Profile</span></h2>
-    <p class="hero-text">
-      I’m a backend-focused software engineer specialising in Java and Kotlin, currently completing a Master’s in Computer Science at Griffith College Dublin. I design and build scalable REST APIs and backend services using Spring Boot, MongoDB, and SQL, with a strong focus on clean architecture, testing, scalability, and maintainability.
-      <br /><br />
-      In addition to backend development, I have experience building Android applications with Kotlin using modern frameworks such as Jetpack, MVVM, and coroutines. I also develop Python-based solutions using FastAPI, including integrations with machine learning models and retrieval-augmented generation (RAG) systems.
-      <br /><br />
-      My background in IT support, system configuration, networking, and troubleshooting helps me design reliable systems and approach debugging in a structured, practical way.
-    </p>
-  </section>
+        <article class="card">
+          <h3 class="card-title">Migration Database – Historical Data</h3>
+          <div class="card-meta">SQL · Data Modelling</div>
+          <p class="card-text">
+            Normalised database project focused on historical migration data, schema design, data integrity, and query efficiency.
+          </p>
+          <div class="card-links">
+            <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank" rel="noopener noreferrer">Details →</a>
+          </div>
+        </article>
 
-  <!-- FEATURED PROJECTS -->
-  <section id="projects">
-    <h2>Featured Projects <span class="label">Backend & systems</span></h2>
-    <div class="grid">
-
-      <div class="card">
-        <strong>Pizzaiolo – Full-Stack Ordering System</strong>
-        <small>⭐ Featured · Java · Spring Boot · React · MongoDB</small>
-        <p>
-          Full-stack ordering platform with REST APIs, authentication, and database integration. Designed with layered backend architecture to simulate real restaurant workflows and user-facing ordering flows.
-        </p>
-        <a href="https://github.com/Granades/pizzaiolo-project" target="_blank" rel="noopener noreferrer">
-          View project →
-        </a>
+        <article class="card">
+          <h3 class="card-title">AR Museum Experience</h3>
+          <div class="card-meta">Android · AR Concept · UX</div>
+          <p class="card-text">
+            Concept project for an educational museum environment, designed to improve storytelling and visitor engagement through interactive mobile experiences.
+          </p>
+          <div class="card-links">
+            <a href="https://gist.github.com/Granades/0e8f3a0867f6a9230546cbd073a660b8" target="_blank" rel="noopener noreferrer">Details →</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="card">
-        <strong>Ragnarok MVP Tracker – Real-Time System</strong>
-        <small>⭐ Featured · Python · Discord API · MongoDB · Automation</small>
-        <p>
-          Real-time event tracking and notification system that records boss kills, calculates respawn timers, tracks tomb locations, and sends Discord alerts to improve group coordination through persistent state management.
-        </p>
-        <a href="https://github.com/Granades/ro-mvp-tracker" target="_blank" rel="noopener noreferrer">
-          View project →
-        </a>
+    <!-- TECH STACK -->
+    <section id="stack">
+      <h2>Tech Stack <span class="section-label">What I work with</span></h2>
+
+      <div class="stack-layout">
+        <div class="stack-group">
+          <h3 class="stack-title">Backend</h3>
+          <div class="stack-tags">
+            <span>Java</span>
+            <span>Kotlin</span>
+            <span>Spring Boot</span>
+            <span>REST APIs</span>
+            <span>SQL</span>
+            <span>MongoDB</span>
+            <span>JUnit</span>
+            <span>OOP</span>
+            <span>Architecture & Maintainability</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <h3 class="stack-title">Mobile</h3>
+          <div class="stack-tags">
+            <span>Android</span>
+            <span>Kotlin</span>
+            <span>Jetpack</span>
+            <span>MVVM</span>
+            <span>Coroutines</span>
+            <span>API Integration</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <h3 class="stack-title">AI / Data</h3>
+          <div class="stack-tags">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>Pandas</span>
+            <span>Scikit-learn</span>
+            <span>RAG</span>
+            <span>LLM Integration</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <h3 class="stack-title">Other</h3>
+          <div class="stack-tags">
+            <span>React</span>
+            <span>Git & GitHub</span>
+            <span>Agile</span>
+            <span>Debugging</span>
+            <span>Cloud-Oriented Development</span>
+            <span>Azurite</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <strong>Housing Inequality in Ireland – ML Analysis</strong>
-        <small>⭐ Featured · Python · Scikit-learn · K-Means</small>
-        <p>
-          Machine learning project analysing housing pressure and socio-economic inequality across Ireland using Census 2022 data. Applies clustering to reveal territorial patterns beyond traditional urban–rural classifications.
-        </p>
-        <a href="https://github.com/Granades/housing-analysis-kmeans" target="_blank" rel="noopener noreferrer">
-          View project →
-        </a>
-      </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact <span class="section-label">Let’s talk</span></h2>
+      <p class="contact-text">
+        I’m currently open to junior and graduate opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Java Developer</strong>, or <strong>Kotlin Developer</strong> in Ireland and across the EU.
+        <br />
+        For job opportunities, collaborations, or technical discussions, feel free to reach me at
+        <a href="mailto:contact@granades.dev">contact@granades.dev</a>.
+      </p>
+    </section>
+  </main>
 
-    </div>
-  </section>
+  <footer>
+    © <span id="year"></span> Fernando Bermudo
+  </footer>
 
-  <!-- OTHER PROJECTS -->
-  <section>
-    <h2>Other Projects <span class="label">Additional work</span></h2>
-    <div class="grid">
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-      <div class="card">
-        <strong>SEWA – Software Engineering Project</strong>
-        <small>Java · SDLC · Agile Practices</small>
-        <p>
-          Academic software engineering project covering requirements, UML design, implementation, testing, and documentation following structured SDLC and Agile practices.
-        </p>
-        <a href="https://github.com/Granades/SEWA" target="_blank" rel="noopener noreferrer">
-          View →
-        </a>
-      </div>
+    const phrases = [
+      "Building Java & Kotlin backend services with Spring Boot.",
+      "Designing REST APIs, databases, and maintainable systems.",
+      "Developing Android apps and Python-based AI integrations.",
+      "Focused on reliable, user-focused, and practical software."
+    ];
 
-      <div class="card">
-        <strong>Android Applications</strong>
-        <small>Kotlin · Android · MVVM · API Integration</small>
-        <p>
-          Small Android projects demonstrating Kotlin development, Android architecture fundamentals, UI design, state handling, and API-driven mobile interactions.
-        </p>
-      </div>
+    let i = 0;
+    let j = 0;
+    let current = "";
+    let isDeleting = false;
+    const el = document.getElementById("typing");
 
-      <div class="card">
-        <strong>SQL Migration Database</strong>
-        <small>SQL · Data Modelling</small>
-        <p>
-          Normalised database project analysing historical migration data, focused on schema design, data integrity, and query efficiency.
-        </p>
-        <a href="https://gist.github.com/Granades/44151f69b10f2343697160b77a78ad81" target="_blank" rel="noopener noreferrer">
-          View →
-        </a>
-      </div>
+    function type() {
+      const full = phrases[i];
 
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SUMMARY -->
-  <section id="experience">
-    <h2>Experience & Approach <span class="label">How I work</span></h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Engineering Foundation</strong>
-        <ul>
-          <li>Building Java and Kotlin backend services, REST APIs, and database-driven applications.</li>
-          <li>Working with Spring Boot, React, MongoDB, SQL, and testing practices such as JUnit.</li>
-          <li>Developing Android applications with Kotlin, MVVM, coroutines, and API integration.</li>
-          <li>Building Python + FastAPI services and AI-oriented workflows including RAG-based integrations.</li>
-          <li>Comfortable with Git, Agile workflows, and collaborative development.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Professional Mindset</strong>
-        <ul>
-          <li>Methodical and calm when debugging and improving systems.</li>
-          <li>Clear communication with both technical and non-technical stakeholders.</li>
-          <li>Strong ownership, analytical thinking, and attention to detail.</li>
-          <li>Motivated to grow in backend and distributed systems roles while expanding Android and AI integration experience.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Tech Stack <span class="label">Selected technologies</span></h2>
-    <div class="skills-list">
-      <span>Java · Kotlin</span>
-      <span>Spring Boot</span>
-      <span>REST APIs</span>
-      <span>JUnit</span>
-      <span>SQL · MySQL</span>
-      <span>MongoDB</span>
-      <span>Android · Jetpack · MVVM</span>
-      <span>Coroutines</span>
-      <span>Python · FastAPI</span>
-      <span>RAG · LLM Integration</span>
-      <span>React</span>
-      <span>Git & GitHub</span>
-      <span>Cloud-Oriented Development</span>
-      <span>Azurite</span>
-      <span>Debugging · Performance Optimisation</span>
-      <span>Windows & Linux fundamentals</span>
-      <span>Basic networking concepts</span>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact <span class="label">Let’s talk</span></h2>
-    <p class="contact">
-      I am open to opportunities as a <strong>Software Engineer</strong>, <strong>Backend Developer</strong>, <strong>Java Developer</strong>, or <strong>Kotlin Developer</strong> in Ireland and across the EU.<br />
-      For job opportunities, collaborations, or technical discussions, feel free to reach me at
-      <a href="mailto:contact@granades.dev">contact@granades.dev</a>
-      or via my GitHub profile.
-    </p>
-    <p class="contact">
-      <strong>Currently open to junior and graduate software engineering opportunities.</strong>
-    </p>
-  </section>
-</main>
-
-<footer>
-  © <span id="year"></span> Fernando Bermudo
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const phrases = [
-    "Building Java & Kotlin backends with Spring Boot.",
-    "Designing REST APIs, databases, and scalable services.",
-    "Developing Android apps and AI-powered integrations.",
-    "Focused on clean, reliable, and maintainable software."
-  ];
-
-  let i = 0, j = 0, current = "", isDeleting = false;
-  const el = document.getElementById("typing");
-
-  function type() {
-    const full = phrases[i];
-
-    if (!isDeleting) {
-      current = full.substring(0, j + 1);
-      j++;
-      if (j === full.length) {
-        isDeleting = true;
-        el.textContent = current;
-        setTimeout(type, 1000);
-        return;
+      if (!isDeleting) {
+        current = full.substring(0, j + 1);
+        j++;
+        if (j === full.length) {
+          isDeleting = true;
+          el.textContent = current;
+          setTimeout(type, 1000);
+          return;
+        }
+      } else {
+        current = full.substring(0, j - 1);
+        j--;
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % phrases.length;
+        }
       }
-    } else {
-      current = full.substring(0, j - 1);
-      j--;
-      if (j === 0) {
-        isDeleting = false;
-        i = (i + 1) % phrases.length;
-      }
+
+      el.textContent = current;
+      setTimeout(type, isDeleting ? 36 : 56);
     }
 
-    el.textContent = current;
-    setTimeout(type, isDeleting ? 40 : 60);
-  }
-
-  if (el) type();
-</script>
+    if (el) type();
+  </script>
 </body>
 </html>
